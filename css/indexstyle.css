@@ -79,10 +79,14 @@ header nav a.active {
 }
 
 .hero-image img {
-  width: 380px;
+  max-width: 100%;
+  height: auto;
   border-radius: 20px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  display: block;
+  margin: 0 auto; /* centers the image */
 }
+
 
 /* Buttons */
 .btn, .btn-small {
