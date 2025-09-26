@@ -1,219 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7 Newton - Our Students</title>
-  <link rel="stylesheet" href="css/indexstyle.css">
-  <style>
-    /* Extra styling for student & teacher cards */
-    .student-card img, .teacher-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .student-card:hover img, .teacher-card:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    }
-    .student-card, .teacher-card {
-      text-align: center;
-    }
-    .student-card h3, .teacher-card h3 {
-      margin-bottom: 6px;
-    }
-    .student-card p, .teacher-card p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-    .teacher-card {
-      background: linear-gradient(135deg, #fbc02d, #f57c00);
-      color: #fff;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Newton - Our Class</title>
+    <link rel="stylesheet" href="css/indexstyle.css">
+    <style>
+        /* Extra styling for student & teacher cards */
+        .student-card img,
+        .teacher-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .student-card:hover img,
+        .teacher-card:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .student-card,
+        .teacher-card {
+            text-align: center;
+        }
+
+        .student-card h3,
+        .teacher-card h3 {
+            margin-bottom: 6px;
+        }
+
+        .student-card p,
+        .teacher-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .teacher-card {
+            background: linear-gradient(135deg, #fbc02d, #f57c00);
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.jpg" alt="7 Newton Logo">
-      <h1>7 Newton</h1>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="students.html" class="active">Our Students</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="projects.html">Projects</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="7 Newton Logo">
+            <h1>7 Newton</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="students.html" class="active">Our Class</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="projects.html">Projects</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="about-hero">
-    <h2>👩‍🎓 Meet Our Class 👨‍🎓</h2>
-    <p>Class 7 Newton is full of motivated, curious, and talented students — guided by our amazing teacher.</p>
-  </section>
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h2>👩‍🎓 Meet Our Class 👨‍🎓</h2>
+        <p>Class 7 Newton is full of motivated, curious, and talented students — guided by our amazing teacher.</p>
+    </section>
 
-  <!-- Students + Teacher Grid -->
-  <section class="features">
-    <h2>🌟 Our Classmates & Teacher</h2>
-    <div class="feature-grid">
+    <!-- Students + Teacher Grid -->
+    <!-- Teachers Section -->
+    <section class="features">
+        <h2>👩‍🏫 Our Amazing Teachers</h2>
+        <div class="teacher-spotlight">
+            <div class="card teacher-card">
+                <img src="images/students/ms-nargiza.jpg" alt="Ms. Nargiza Asatova">
+                <h3>Ms. Nargiza Asatova</h3>
+                <p>Our Inspiring Class Teacher 🌸</p>
+            </div>
+            <div class="card teacher-card">
+                <img src="images/students/tohir-hasanov.jpg" alt="Mr. Tohir Hasanov">
+                <h3>Mr. Tohir Hasanov</h3>
+                <p>School Director 🎓</p>
+            </div>
 
-      <!-- Teacher Card -->
-      <div class="card teacher-card">
-        <img src="images/students/ms-nargiza.jpg" alt="Ms. Nargiza Asatova">
-        <h3>Ms. Nargiza Asatova</h3>
-        <p>Our Inspiring Teacher 🌸</p>
-      </div>
+            <div class="card teacher-card">
+                <img src="images/students/ms-muborak.jpg" alt="Ms. Muborak Kamalovna">
+                <h3>Ms. Muborak Kamalovna</h3>
+                <p>Head Teacher for Organization 📑</p>
+            </div>
+            <div class="card teacher-card">
+                <img src="images/students/ms-nodira.jpg" alt="Ms. Nodira Tulkunovna">
+                <h3>Ms. Nodira Tulkunovna</h3>
+                <p>Head Teacher for Behavior 🌟</p>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <h2>🌟 Our Classmates</h2>
+        <div class="feature-grid">
 
-      <!-- Student Cards -->
-      <div class="card about student-card">
-        <img src="images/students/sardor.png" alt="Sardor Abduraupov">
-        <h3>Sardor Abduraupov</h3>
-        <p>Innovator, Leader, Programmer 🚀</p>
-      </div>
 
-      <div class="card gallery student-card">
-        <img src="images/students/malika-azimova.jpg" alt="Malika Azimova">
-        <h3>Malika Azimova</h3>
-        <p>Creative Designer 🎨</p>
-      </div>
 
-      <div class="card projects student-card">
-        <img src="images/students/imronbek.jpg" alt="Imronbek Najmiddinov">
-        <h3>Imronbek Najmiddinov</h3>
-        <p>Future Scientist 🔬</p>
-      </div>
+            <!-- Student Cards -->
+            <div class="card about student-card">
+                <img src="images/students/sardor.png" alt="Sardor Abduraupov">
+                <h3>Sardor Abduraupov</h3>
+                <p>Innovator, Leader, Programmer 🚀</p>
+            </div>
 
-      <div class="card events student-card">
-        <img src="images/students/dilnura.jpg" alt="Sodiqova Dilnura">
-        <h3>Sodiqova Dilnura</h3>
-        <p>Book Lover 📚</p>
-      </div>
+            <div class="card gallery student-card">
+                <img src="images/students/malika-azimova.jpg" alt="Malika Azimova">
+                <h3>Malika Azimova</h3>
+                <p>Creative Designer, Leader🎨</p>
+            </div>
 
-      <div class="card about student-card">
-        <img src="images/students/shermatova.jpg" alt="Shermatova Malika">
-        <h3>Shermatova Malika</h3>
-        <p>Artist 🎭</p>
-      </div>
+            <div class="card projects student-card">
+                <img src="images/students/imronbek.jpg" alt="Imronbek Najmiddinov">
+                <h3>Imronbek Najmiddinov</h3>
+                <p>Future Scientist 🔬</p>
+            </div>
 
-      <div class="card gallery student-card">
-        <img src="images/students/yasmina.jpg" alt="Saidova Yasmina">
-        <h3>Saidova Yasmina</h3>
-        <p>Dancer 💃</p>
-      </div>
+            <div class="card events student-card">
+                <img src="images/students/dilnura.jpg" alt="Sodiqova Dilnura">
+                <h3>Sodiqova Dilnura</h3>
+                <p>Book Lover 📚</p>
+            </div>
 
-      <div class="card projects student-card">
-        <img src="images/students/salohiddin.jpg" alt="Saidov Salohiddin">
-        <h3>Saidov Salohiddin</h3>
-        <p>Math Genius ➗</p>
-      </div>
+            <div class="card about student-card">
+                <img src="images/students/shermatova.jpg" alt="Shermatova Malika">
+                <h3>Shermatova Malika</h3>
+                <p>Artist 🎭</p>
+            </div>
+<div class="card projects student-card">
+                <img src="images/students/salohiddin.jpg" alt="Saidov Salohiddin">
+                <h3>Saidov Salohiddin</h3>
+                <p>Math Genius ➗</p>
+            </div>
+            <div class="card gallery student-card">
+                <img src="images/students/yasmina.jpg" alt="Saidova Yasmina">
+                <h3>Saidova Yasmina</h3>
+                <p>Friendly 😊</p>
+            </div>
 
-      <div class="card events student-card">
-        <img src="images/students/aisha.jpg" alt="Butaeva Aisha">
-        <h3>Butaeva Aisha</h3>
-        <p>Dreamer 🌙</p>
-      </div>
+            
 
-      <div class="card about student-card">
-        <img src="images/students/islomion.jpg" alt="Erkinjonov Islomion">
-        <h3>Erkinjonov Islomion</h3>
-        <p>Sporty ⚽</p>
-      </div>
+            <div class="card events student-card">
+                <img src="images/students/aisha.jpg" alt="Butaeva Aisha">
+                <h3>Butaeva Aisha</h3>
+                <p>Diplomat 🧠</p>
+            </div>
 
-      <div class="card gallery student-card">
-        <img src="images/students/jamilaxon.jpg" alt="Akbarova Jamilaxon">
-        <h3>Akbarova Jamilaxon</h3>
-        <p>Musician 🎶</p>
-      </div>
+            <div class="card about student-card">
+                <img src="images/students/islomion.jpg" alt="Erkinjonov Islomion">
+                <h3>Erkinjonov Islomion</h3>
+                <p>Sporty ⚽</p>
+            </div>
 
-      <div class="card projects student-card">
-        <img src="images/students/mirfozil.jpg" alt="Mirzoidov Mirfozil">
-        <h3>Mirzoidov Mirfozil</h3>
-        <p>Leader ⭐</p>
-      </div>
+            <div class="card gallery student-card">
+                <img src="images/students/jamilaxon.jpg" alt="Akbarova Jamilaxon">
+                <h3>Akbarova Jamilaxon</h3>
+                <p>Musician 🎶</p>
+            </div>
 
-      <div class="card events student-card">
-        <img src="images/students/abduvoris.jpg" alt="Abdukarimov Abduvoris">
-        <h3>Abdukarimov Abduvoris</h3>
-        <p>Explorer 🌍</p>
-      </div>
+            <div class="card projects student-card">
+                <img src="images/students/mirfozil.jpg" alt="Mirzoidov Mirfozil">
+                <h3>Mirzoidov Mirfozil</h3>
+                <p>Leader ⭐</p>
+            </div>
+<div class="card gallery student-card">
+                <img src="images/students/anvarxon.jpg" alt="Abduraxmonov Anvarxon">
+                <h3>Abduraxmonov Anvarxon</h3>
+                <p>Techie 💻</p>
+            </div>
+            <div class="card events student-card">
+                <img src="images/students/abduvoris.jpg" alt="Abdukarimov Abduvoris">
+                <h3>Abdukarimov Abduvoris</h3>
+                <p>Sporty ⚽</p>
+            </div>
 
-      <div class="card about student-card">
-        <img src="images/students/shaxzoda.jpg" alt="Mardonova Shaxzoda">
-        <h3>Mardonova Shaxzoda</h3>
-        <p>Bright Mind 💡</p>
-      </div>
+            <div class="card about student-card">
+                <img src="images/students/shaxzoda.jpg" alt="Mardonova Shaxzoda">
+                <h3>Mardonova Shaxzoda</h3>
+                <p>Singer, Model 🎶</p>
+            </div>
 
-      <div class="card gallery student-card">
-        <img src="images/students/anvarxon.jpg" alt="Abduraxmonov Anvarxon">
-        <h3>Abduraxmonov Anvarxon</h3>
-        <p>Techie 💻</p>
-      </div>
+            
 
-      <div class="card projects student-card">
-        <img src="images/students/osiyo.jpg" alt="Bakirova Osiyo">
-        <h3>Bakirova Osiyo</h3>
-        <p>Friendly 😊</p>
-      </div>
+            <div class="card projects student-card">
+                <img src="images/students/osiyo.jpg" alt="Bakirova Osiyo">
+                <h3>Bakirova Osiyo</h3>
+                <p>Friendly 😊</p>
+            </div>
 
-      <div class="card events student-card">
-        <img src="images/students/umarbek.jpg" alt="Abduxalikov Umarbek">
-        <h3>Abduxalikov Umarbek</h3>
-        <p>Problem Solver 🧩</p>
-      </div>
+            <div class="card events student-card">
+                <img src="images/students/umarbek.jpg" alt="Abduxalikov Umarbek">
+                <h3>Abduxalikov Umarbek</h3>
+                <p>Problem Solver 🧩</p>
+            </div>
 
-      <div class="card about student-card">
-        <img src="images/students/roziya.jpg" alt="Abdurashidova Roziya">
-        <h3>Abdurashidova Roziya</h3>
-        <p>Curious 🌟</p>
-      </div>
+            <div class="card about student-card">
+                <img src="images/students/roziya.jpg" alt="Abdurashidova Roziya">
+                <h3>Abdurashidova Roziya</h3>
+                <p>Actress 🎭</p>
+            </div>
 
-      <div class="card gallery student-card">
-        <img src="images/students/abdumalik.jpg" alt="Abdullayev Abdumalik">
-        <h3>Abdullayev Abdumalik</h3>
-        <p>Strategist 🎯</p>
-      </div>
+            <div class="card gallery student-card">
+                <img src="images/students/abdumalik.jpg" alt="Abdullayev Abdumalik">
+                <h3>Abdullayev Abdumalik</h3>
+                <p>Actor 🎭</p>
+            </div>
 
-      <div class="card projects student-card">
-        <img src="images/students/sofiya.jpg" alt="Raximova Sofiya">
-        <h3>Raximova Sofiya</h3>
-        <p>Creative Writer ✍️</p>
-      </div>
+            <div class="card projects student-card">
+                <img src="images/students/sofiya.jpg" alt="Raximova Sophiya">
+                <h3>Raximova Sophiya</h3>
+                <p>Future Flight Attendant ✈️</p>
+            </div>
 
-      <div class="card events student-card">
-        <img src="images/students/hadicha.jpg" alt="Khotamova Hadicha">
-        <h3>Khotamova Hadicha</h3>
-        <p>Thinker 🧠</p>
-      </div>
+            <div class="card events student-card">
+                <img src="images/students/hadicha.jpg" alt="Khotamova Hadicha">
+                <h3>Khotamova Hadicha</h3>
+                <p>Thinker 🧠</p>
+            </div>
 
-      <div class="card about student-card">
-        <img src="images/students/ezoza.jpg" alt="Ibragimova E'zoza">
-        <h3>Ibragimova E'zoza</h3>
-        <p>Dream Chaser 🌈</p>
-      </div>
+            <div class="card about student-card">
+                <img src="images/students/ezoza.jpg" alt="Ibragimova E'zoza">
+                <h3>Ibragimova E'zoza</h3>
+                <p>Dream Chaser 🌈</p>
+            </div>
 
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <!-- Quote Section -->
-  <section class="quote">
-    <blockquote>“Together we shine brighter – Class 7 Newton ✨”</blockquote>
-    <p>– SIS Tashkent</p>
-  </section>
+    <!-- Quote Section -->
+    <section class="quote">
+        <blockquote>“Together we shine brighter – Class 7 Newton ✨”</blockquote>
+        <p>– SIS Tashkent</p>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; <span id="year"></span> 7 Newton – SIS Tashkent</p>
-    <div style="margin-top:10px;">
-      <p>Designed by Abduraupov Sardor & Azimova Malika with ❤️</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> 7 Newton – SIS Tashkent</p>
+        <div style="margin-top:10px;">
+            <p>Designed by Abduraupov Sardor & Azimova Malika with ❤️</p>
+        </div>
+    </footer>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

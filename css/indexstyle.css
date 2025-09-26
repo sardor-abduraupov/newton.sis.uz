@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 10%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -82,14 +82,16 @@ header nav a.active {
   max-width: 100%;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   display: block;
-  margin: 0 auto; /* centers the image */
+  margin: 0 auto;
+  /* centers the image */
 }
 
 
 /* Buttons */
-.btn, .btn-small {
+.btn,
+.btn-small {
   display: inline-block;
   background: #ff6f61;
   color: #fff;
@@ -100,7 +102,8 @@ header nav a.active {
   transition: transform 0.2s, background 0.3s;
 }
 
-.btn:hover, .btn-small:hover {
+.btn:hover,
+.btn-small:hover {
   transform: scale(1.05);
   background: #e64a19;
 }
@@ -135,7 +138,7 @@ header nav a.active {
   border-radius: 16px;
   color: #fff;
   font-weight: 500;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s;
 }
 
@@ -143,10 +146,21 @@ header nav a.active {
   transform: translateY(-6px);
 }
 
-.card.about { background: linear-gradient(135deg, #42a5f5, #478ed1); }
-.card.gallery { background: linear-gradient(135deg, #ff6f61, #f06292); }
-.card.projects { background: linear-gradient(135deg, #66bb6a, #43a047); }
-.card.events { background: linear-gradient(135deg, #ffca28, #f9a825); }
+.card.about {
+  background: linear-gradient(135deg, #42a5f5, #478ed1);
+}
+
+.card.gallery {
+  background: linear-gradient(135deg, #ff6f61, #f06292);
+}
+
+.card.projects {
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+.card.events {
+  background: linear-gradient(135deg, #ffca28, #f9a825);
+}
 
 /* Quote */
 .quote {
@@ -188,21 +202,25 @@ footer {
   margin: 0 auto;
   text-align: center;
 }
+
 .timeline-container {
   border-left: 3px solid #6a11cb;
   margin-top: 30px;
   padding-left: 20px;
 }
+
 .timeline-item {
   margin: 20px 0;
   position: relative;
 }
+
 .timeline-item .date {
   font-weight: bold;
   color: #6a11cb;
   display: block;
   margin-bottom: 5px;
 }
+
 .timeline-item::before {
   content: "●";
   position: absolute;
@@ -219,22 +237,26 @@ footer {
   padding: 60px 20px;
   text-align: center;
 }
+
 .facts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 25px;
   margin-top: 40px;
 }
+
 .fact {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 16px;
   backdrop-filter: blur(4px);
 }
+
 .fact h3 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
 /* ================== TEAM SECTION ================== */
 .features .card {
   text-align: center;
@@ -246,7 +268,7 @@ footer {
 
 .features .card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ================== FUN FACTS / ACHIEVEMENTS ================== */
@@ -298,6 +320,7 @@ footer a:hover {
   color: #42a5f5;
   transform: scale(1.2);
 }
+
 /* ================== FACTS ABOUT 7 NEWTON ================== */
 .facts-section {
   padding: 70px 10%;
@@ -321,7 +344,7 @@ footer a:hover {
 }
 
 .facts-section .fact-box {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   padding: 25px;
   border-radius: 16px;
   backdrop-filter: blur(4px);
@@ -335,5 +358,48 @@ footer a:hover {
 
 .facts-section .fact-box:hover {
   transform: translateY(-6px);
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Teachers Section */
+.teacher-spotlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.teacher-card {
+  text-align: center;
+  background: linear-gradient(135deg, #fbc02d, #f57c00); /* default gold */
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+}
+
+.teacher-card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.teacher-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+.teacher-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* Special Style for Director */
+.teacher-card.director {
+  background: linear-gradient(135deg, #1565c0, #1e88e5); /* royal blue */
+}
+.teacher-card.director:hover {
+  background: linear-gradient(135deg, #0d47a1, #1976d2); /* darker royal blue */
 }
