@@ -1,0 +1,133 @@
+/* ================== EVENTS PAGE STYLING ================== */
+
+/* Events Hero */
+.about-hero {
+    background: linear-gradient(135deg, #42a5f5, #66bb6a);
+    color: #fff;
+    text-align: center;
+    padding: 90px 20px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    animation: fadeInDown 1s ease;
+  }
+  
+  .about-hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* Events Section */
+  .events-cards {
+    padding: 90px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfdfd, #f3f3f3);
+  }
+  
+  .events-cards h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff6f61, #ffd54f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Event Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+  }
+  
+  /* Event Card */
+  .event-card {
+    background: #fff;
+    color: #333;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease both;
+  }
+  
+  .event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+  }
+  
+  .event-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .event-card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Hover Effects */
+  .event-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+  }
+  
+  .event-card:hover img {
+    transform: scale(1.07);
+  }
+  
+  /* Button inside Event Cards */
+  .event-card .btn-small {
+    background: linear-gradient(135deg, #42a5f5, #66bb6a);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .event-card .btn-small:hover {
+    background: linear-gradient(135deg, #ff6f61, #f06292);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  }
+  
+  /* ================== ANIMATIONS ================== */
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

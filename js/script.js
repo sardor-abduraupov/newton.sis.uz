@@ -1,6 +1,8 @@
 // Auto-update footer year
-document.getElementById("year").textContent = new Date().getFullYear();
-
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 const quotes = [
   { text: "A child miseducated is a child lost.", author: "John F. Kennedy" },
   { text: "A good teacher must be able to put himself in the place of those who find learning hard.", author: "Eliphas Levi" },
@@ -98,18 +100,23 @@ const quotes = [
   { text: "Education is not a problem. Education is an opportunity.", author: "Lyndon Johnson" }
 ];
 
-// Pick random quote
+// Pick random quote safely
 function displayRandomQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  const quote = quotes[randomIndex];
+  const quoteTextEl = document.getElementById("quote-text");
+  const quoteAuthorEl = document.getElementById("quote-author");
 
-  document.getElementById("quote-text").textContent = `"${quote.text}"`;
-  document.getElementById("quote-author").textContent = `— ${quote.author}`;
+  if (quoteTextEl && quoteAuthorEl) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex];
+    quoteTextEl.textContent = `"${quote.text}"`;
+    quoteAuthorEl.textContent = `— ${quote.author}`;
+  }
 }
 
 // Run when page loads
-window.onload = displayRandomQuote;
+window.addEventListener("load", displayRandomQuote);
 
+// Animate counters safely
 document.addEventListener("DOMContentLoaded", () => {
   const counters = [
     { id: "students-count", value: 24 },
@@ -119,9 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   counters.forEach(counter => {
+    const el = document.getElementById(counter.id);
+    if (!el) return; // skip if element not on page
+
     let count = 0;
     const target = counter.value;
-    const el = document.getElementById(counter.id);
     const interval = setInterval(() => {
       count++;
       el.textContent = count;

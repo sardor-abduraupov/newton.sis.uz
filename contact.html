@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact – 7 Newton</title>
   <link rel="stylesheet" href="css/indexstyle.css">
+  <link rel="stylesheet" href="css/contactstyle.css">
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -16,7 +19,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
-      <a href="students.html">Our Students</a>
+      <a href="students.html">Our Class</a>
       <a href="gallery.html">Gallery</a>
       <a href="projects.html">Projects</a>
       <a href="events.html">Events</a>
@@ -31,28 +34,27 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact-section" style="padding:60px 10%; text-align:center;">
-    <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:40px;">
-      
+  <section class="contact-section">
+    <div class="grid">
       <!-- Contact Form -->
-      <div class="contact-form" style="text-align:left;">
+      <div class="contact-form">
         <h3>Send Us a Message</h3>
-        <form>
+        <form id="contactForm">
           <label for="name">Your Name</label><br>
-          <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc;"><br>
+          <input type="text" id="name" name="name" required><br>
 
           <label for="email">Your Email</label><br>
-          <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc;"><br>
+          <input type="email" id="email" name="email" required><br>
 
           <label for="message">Message</label><br>
-          <textarea id="message" name="message" rows="6" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc;"></textarea><br>
+          <textarea id="message" name="message" rows="6" required></textarea><br>
 
           <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
 
       <!-- Contact Info -->
-      <div class="contact-info" style="text-align:left;">
+      <div class="contact-info">
         <h3>Our Contact Details</h3>
         <p><b>🏫 School:</b> Singapore International School Tashkent</p>
         <p><b>📍 Address:</b> Tashkent, Uzbekistan</p>
@@ -71,6 +73,15 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("NFcwqer2CUSMJccDG"); // ✅ Your Public Key
+      console.log("✅ EmailJS initialized");
+    })();
+  </script>
   <script src="js/script.js"></script>
+  <script src="js/contactscript.js"></script>
 </body>
 </html>
