@@ -1,11 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teachers’ Day 2025 – 7 Newton</title>
   <link rel="stylesheet" href="../css/indexstyle.css">
+  <style>
+    /* ---------- HERO ---------- */
+    .about-hero {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 120px 20px;
+      background: linear-gradient(270deg, #ff6b6b, #f9ca24, #6c5ce7, #00cec9);
+      background-size: 800% 800%;
+      animation: gradientMove 12s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    .about-hero h2 {
+      font-size: 3rem;
+      animation: floaty 4s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: drift 20s infinite linear;
+    }
+
+    .shape:nth-child(1) {
+      width: 120px;
+      height: 120px;
+      top: 20%;
+      left: 10%;
+      background: #fff;
+    }
+
+    .shape:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      bottom: 10%;
+      right: 15%;
+      background: #ffeaa7;
+    }
+
+    .shape:nth-child(3) {
+      width: 90px;
+      height: 90px;
+      top: 40%;
+      right: 25%;
+      background: #55efc4;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      to {
+        transform: translateY(-100vh) rotate(360deg);
+      }
+    }
+
+    /* ---------- EVENT CONTENT ---------- */
+    .event-details {
+      padding: 80px 10%;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .event-details h3 {
+      margin-top: 60px;
+      font-size: 1.8rem;
+      color: #6c5ce7;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-details p {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    /* ---------- TEACHER CARDS (slider) ---------- */
+    .teacher-slider {
+      position: relative;
+      max-width: 600px;
+      /* margin: 40px auto; */
+      overflow: hidden;
+    }
+
+    .teacher-card {
+      display: none;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      /* ensures image corners follow the card */
+      color: #fff;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease;
+      text-align: center;
+      color: black;
+
+    }
+
+    .teacher-card.active {
+      display: block;
+    }
+
+    .teacher-card img {
+      width: 100%;
+      height: 100%;
+      /* fixed height for consistency */
+      object-fit: cover;
+      /* fills card without distortion */
+      border-bottom: 4px solid #ffeaa7;
+    }
+
+    .teacher-card h4 {
+      font-size: 1.6rem;
+      margin: 15px 0 5px;
+      color: #ffeaa7;
+    }
+
+    .teacher-card p {
+      margin: 8px 15px;
+      line-height: 1.6;
+      color: black;
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .slider-controls button {
+      background: #6c5ce7;
+      border: none;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background .3s;
+    }
+
+    .slider-controls button:hover {
+      background: #4834d4;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- GALLERY ---------- */
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* ---------- CONFETTI ---------- */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+  </style>
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -17,8 +255,7 @@
       <a href="../index.html">Home</a>
       <a href="../about.html">About Us</a>
       <a href="../students.html">Our Students</a>
-      <a href="../gallery.html">Gallery</a>
-      <a href="../projects.html">Projects</a>
+      <!-- <a href="../gallery.html">Gallery</a> -->
       <a href="../events.html" class="active">Events</a>
       <a href="../contact.html">Contact</a>
     </nav>
@@ -28,19 +265,256 @@
   <section class="about-hero">
     <h2>🎓 Teachers’ Day 2025</h2>
     <p>A day full of gratitude, performances, and love for our teachers.</p>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
   </section>
 
   <!-- Content -->
-  <section class="event-details" style="padding:60px 10%; max-width:900px; margin:auto;">
+  <section class="event-details">
     <h3>📖 About the Event</h3>
-    <p>On Teachers’ Day 2025, Class 7 Newton came together to honor our amazing teachers with heartfelt speeches, songs, and performances.</p>
+    <p>
+      Teachers’ Day 2025 at 7 Newton
 
-    <h3>📸 Event Highlights</h3>
-    <img src="../images/teachersday2025.jpg" alt="Teachers Day Celebration" style="width:100%; border-radius:12px; margin:20px 0;">
+      Teachers’ Day 2025 at 7 Newton was a warm and memorable occasion dedicated to showing respect and gratitude to our
+      teachers. The morning began with excitement as students arrived carrying flowers, small gifts, and handwritten
+      notes. The school hallways were decorated with posters, balloons, and banners made by different classes, each
+      carrying messages of thanks. It was clear that students had spent time and effort preparing to make the day
+      special.
 
-    <h3>🎥 Video</h3>
+      The celebration started with short speeches. A few students came forward to share personal stories of how their
+      teachers had guided them and encouraged them through challenges. Parents also spoke, thanking the school and the
+      staff for their dedication to helping children grow both academically and personally. Several alumni joined the
+      event as well, reminding current students that the lessons they learn at 7 Newton will continue to help them long
+      after graduation.
+
+      After the speeches, the mood shifted to performances. Groups of students sang songs, recited poems, and performed
+      short skits. Each act was centered on the theme of appreciation and respect for teachers. Some were lighthearted
+      and funny, while others were emotional, but all of them carried the same message: teachers play an important role
+      in shaping lives. The variety of performances kept the audience engaged, and many teachers could be seen smiling
+      and laughing at the creativity of their students.
+
+      One of the highlights of the day was the “Wall of Gratitude.” Each class had written thank-you notes for their
+      teachers and displayed them in the main hall. Some notes were short and simple, while others were longer and more
+      personal, but together they created a colorful and meaningful collection of appreciation. Teachers took time to
+      read the notes, often stopping to smile or laugh at the memories students had written down.
+
+      The school also recognized teachers formally with small certificates of appreciation. These were not only for
+      academic teaching but also for qualities like patience, kindness, and encouragement. It was a reminder that
+      teaching is about more than just lessons—it is also about building confidence and character.
+
+      As the program came to an end, students presented flowers to their teachers. Some classes had also prepared small
+      videos or slideshows with photos from the school year, which added a personal and touching element to the day.
+      Finally, the teachers were invited to a tea and snack reception prepared by the students and parents. This gave
+      everyone a chance to relax, talk, and enjoy the day in a less formal way.
+
+      Teachers’ Day 2025 at 7 Newton was not just about celebration—it was about recognition. It reminded students how
+      much effort teachers put into their work every day and how deeply their influence is felt. For the teachers, it
+      was a simple but meaningful sign that their dedication is noticed and appreciated.
+    </p>
+
+    <h3>🌟 Our Teachers</h3>
+    <div class="teacher-slider">
+      <div class="teacher-card active">
+        <img src="../images/teachers/miraziz.png" alt="Mr. Miraziz">
+        <h4>Mr. Miraziz</h4>
+        <p><strong>Subject:</strong> Mathematics</p>
+        <p>Known for making numbers feel alive, he inspires logical thinking and problem-solving in every lesson.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/ali.jpg" alt="Mr. Muhammadali">
+        <h4>Mr. Muhammadali</h4>
+        <p><strong>Subject:</strong> History & Etiquette</p>
+        <p>A storyteller of the past and a guide in values, he helps students learn both culture and character.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/malika.jpg" alt="Ms. Malika">
+        <h4>Ms. Malika </h4>
+        <p><strong>Subject:</strong> 2nd Foreign Language</p>
+        <p>She opens the doors to new worlds by teaching languages, bridging cultures and building connections.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/matin.png" alt="Mr. Matin">
+        <h4>Mr. Matin</h4>
+        <p><strong>Subject:</strong> Informatics</p>
+        <p>Always encouraging innovation, he guides students in understanding the digital world and coding solutions.
+        </p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/jombulat.jpg" alt="Mr. Jombulat">
+        <h4>Mr. Jombulat</h4>
+        <p><strong>Subject:</strong> Physical Education</p>
+        <p>With energy and spirit, he encourages teamwork, discipline, and a love for staying active.</p>
+      </div>
+      <div class="teacher-card">
+        <img src="../images/teachers/malikape.png" alt="Ms. Malika">
+        <h4>Ms. Malika</h4>
+        <p><strong>Subject:</strong> Physical Education</p>
+        <p>With energy and spirit, she encourages teamwork, discipline, and a love for staying active.</p>
+      </div>
+      <div class="teacher-card">
+        <img src="../images/teachers/andrey.png" alt="Mr. Andrey">
+        <h4>Mr. Andrey</h4>
+        <p><strong>Subject:</strong> Physics, Astronomy, Chemistry, Geography</p>
+        <p>A scientist at heart, he brings the wonders of the universe, science, and the earth closer to students.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/knumora.jpg" alt="Ms. Khumora">
+        <h4>Ms. Khumora</h4>
+        <p><strong>Subject:</strong> Arts</p>
+        <p>Inspires creativity and imagination through colors, shapes, and artistic expression.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/nargiza.png" alt="Ms. Nargiza">
+        <h4>Ms. Nargiza</h4>
+        <p><strong>Subject:</strong> IT Programming</p>
+        <p>Guides future developers in building logic, creativity, and problem-solving through programming.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/gulfina.png" alt="Ms. Gulfina">
+        <h4>Ms. Gulfina</h4>
+        <p><strong>Subject:</strong> English Language</p>
+        <p>Teaches English with passion, making literature and communication skills shine in every student.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/maftuna.png" alt="Ms. Maftuna">
+        <h4>Ms. Maftuna</h4>
+        <p><strong>Subject:</strong> Russian Language</p>
+        <p>Brings the richness of Russian literature and language, expanding students’ cultural horizons.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/aya.png" alt="Ms. Aya">
+        <h4>Ms. Aya</h4>
+        <p><strong>Subject:</strong> English</p>
+        <p>Dedicated to teaching English with clarity and creativity, making every lesson enjoyable.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/lydia.png" alt="Ms. Lydia">
+        <h4>Ms. Lydia</h4>
+        <p><strong>Subject:</strong> Economics & Finance</p>
+        <p>Transforms complex economic ideas into practical lessons that prepare students for real-world success.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/esmira.jpg" alt="Ms. Esrmira">
+        <h4>Ms. Esmira</h4>
+        <p><strong>Subject:</strong> Music Culture</p>
+        <p>Through music and science, she creates harmony between art and knowledge in students’ lives.</p>
+      </div>
+      <div class="teacher-card">
+        <img src="../images/teachers/aziza.png" alt="Ms. Aziza">
+        <h4>Ms. Aziza</h4>
+        <p><strong>Subject:</strong>Russian</p>
+        <p>Creates perfect meanings of live through science of Russian Language!😊</p>
+      </div>
+      <div class="teacher-card">
+        <img src="../images/teachers/abdulmalik.png" alt="Mr. Abdulmalik">
+        <h4>Mr. Abdulmalik</h4>
+        <p><strong>Subject:</strong> Mathematics</p>
+        <p>Passionate about problem-solving, he makes mathematics exciting and accessible to every student.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/sumera.png" alt="Ms. Sumera">
+        <h4>Ms. Sumera</h4>
+        <p><strong>Subject:</strong> Business English</p>
+        <p>She equips learners with the language of business, preparing them for success in the professional world.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/alexandr.png" alt="Mr. Alexander">
+        <h4>Mr. Alexander</h4>
+        <p><strong>Subject:</strong> Information Technology</p>
+        <p>Guides students in mastering modern technologies, inspiring creativity in the digital age.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/nodira.png" alt="Ms. Nodira">
+        <h4>Ms. Nodira</h4>
+        <p><strong>Position:</strong> Head Teacher</p>
+        <p>A leader and mentor, she provides direction, wisdom, and encouragement to both students and teachers.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/malohat.png" alt="Ms. Malohat">
+        <h4>Ms. Malohat</h4>
+        <p><strong>Position:</strong> Administration</p>
+        <p>Ensures smooth organization and management, supporting the entire school community with dedication.</p>
+      </div>
+
+      <!-- <div class="teacher-card">
+        <img src="../images/teachers/muborak.png" alt="Ms. Muborak">
+        <h4>Ms. Muborak</h4>
+        <p><strong>Position:</strong> Head Teacher</p>
+        <p>A guiding force, she nurtures students’ growth and motivates them to reach their highest potential.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/tohir.png" alt="Mr. Tohir Hasanov">
+        <h4>Mr. Tohir Hasanov</h4>
+        <p><strong>Position:</strong> Director</p>
+        <p>With vision and leadership, he directs the school towards excellence and innovation in education.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/saida.jpg" alt="Ms. Saida">
+        <h4>Ms. Saida</h4>
+        <p><strong>Subject:</strong> English Language</p>
+        <p>Teaches English with creativity and passion, helping students build confidence in communication.</p>
+      </div> -->
+      <div class="teacher-card">
+        <img src="../images/teachers/yasin.png" alt="Mr. Yasin">
+        <h4>Mr. Yasin</h4>
+        <p><strong>Subject:</strong> Business English</p>
+        <p>Equips students with the language of business, preparing them for international success.</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/shohinur.png" alt="Ms. Shohinur">
+        <h4>Ms. Shohinur</h4>
+        <p><strong>Subject:</strong> Uzbek Language</p>
+        <p>Passionately teaches the beauty and richness of the Uzbek language, connecting students to their heritage.
+        </p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="../images/teachers/zahra.png" alt="Ms. Zahra Razmi">
+        <h4>Ms. Zahra Razmi</h4>
+        <p><strong>Subject:</strong> Business Studies</p>
+        <p>Guides students in understanding the foundations of business, inspiring future entrepreneurs.</p>
+      </div>
+
+      <div class="slider-controls">
+        <button id="prevTeacher">⟨ Prev</button>
+        <button id="nextTeacher">Next ⟩</button>
+      </div>
+    </div>
+
+
+    <h3>📸 Event Highlights (We will add your photos soon!)</h3>
+    <div class="carousel">
+      <img src="../images/teachersday2025.jpg" class="active" alt="Celebration 1">
+      <img src="../images/teachersday2025b.jpg" alt="Celebration 2">
+      <img src="../images/teachersday2025c.jpg" alt="Celebration 3">
+      <div class="carousel-controls">
+        <button id="prev">⟨</button>
+        <button id="next">⟩</button>
+      </div>
+    </div>
+
+    <h3>🎥 Video (Made by Yasmina Saidova)</h3>
     <video controls style="width:100%; border-radius:12px; margin-top:15px;">
-      <source src="../videos/teachersday2025.mp4" type="video/mp4">
+      <source src="../images/events/IMG_0457.MP4" type="video/mp4">
       Your browser does not support video playback.
     </video>
   </section>
@@ -53,6 +527,52 @@
     </div>
   </footer>
 
-  <script src="../js/script.js"></script>
+  <!-- Confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script>
+    // auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // carousel
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+    function showImage(i) {
+      images.forEach((img, j) => img.classList.toggle('active', j === i));
+    }
+    document.getElementById('next').onclick = () => { index = (index + 1) % images.length; showImage(index); }
+    document.getElementById('prev').onclick = () => { index = (index - 1 + images.length) % images.length; showImage(index); }
+
+    // teacher slider
+    const teacherCards = document.querySelectorAll('.teacher-card');
+    let teacherIndex = 0;
+    function showTeacher(i) {
+      teacherCards.forEach((card, j) => card.classList.toggle('active', j === i));
+    }
+    document.getElementById('nextTeacher').onclick = () => { teacherIndex = (teacherIndex + 1) % teacherCards.length; showTeacher(teacherIndex); }
+    document.getElementById('prevTeacher').onclick = () => { teacherIndex = (teacherIndex - 1 + teacherCards.length) % teacherCards.length; showTeacher(teacherIndex); }
+
+    // confetti
+    const canvas = document.getElementById("confetti-canvas");
+    const ctx = canvas.getContext("2d");
+    let confetti = [];
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener("resize", resize); resize();
+    function ConfettiPiece() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height - canvas.height; this.size = Math.random() * 6 + 4; this.speed = Math.random() * 3 + 2; this.color = `hsl(${Math.random() * 360},100%,50%)`; }
+    function addConfetti(n = 100) { for (let i = 0; i < n; i++) { confetti.push(new ConfettiPiece()); } }
+    function updateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(c => {
+        c.y += c.speed;
+        if (c.y > canvas.height) c.y = -10;
+        c.x += Math.sin(c.y * 0.05);
+        ctx.fillStyle = c.color;
+        ctx.fillRect(c.x, c.y, c.size, c.size);
+      });
+      requestAnimationFrame(updateConfetti);
+    }
+    addConfetti(200); updateConfetti();
+  </script>
 </body>
+
 </html>
